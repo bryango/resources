@@ -22,7 +22,7 @@ jobs:
         git config --local user.email "workflow@github.com"
         git config --local user.name "Workflow - master"
         git checkout gh-pages
-        git merge --ff --commit master
+        git merge --ff master
         git push origin gh-pages
 
 # vim: ts=2 sw=2
