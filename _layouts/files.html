@@ -6,6 +6,10 @@ layout: base
 
 <br/>
 
+{%- include license.html -%}
+
+<br/>
+
 <h2 id="path">Index of {{ page.url }}</h2>
 
 <table style="width:100%">
@@ -21,14 +25,14 @@ layout: base
         <td></td>
     </tr>
 
-{%- for res in site.pages -%}
+{%- for res in site.static_files -%}
 
-    {%- assign checkStart = res.url | split: page.url -%}
+    {%- assign checkStart = res.path | split: page.url -%}
     {%- if checkStart[0] != '' -%}
         {%- continue -%}
     {%- endif -%}
 
-    {%- assign target = res.url | remove_first: page.url -%}
+    {%- assign target = res.path | remove_first: page.url -%}
     {%- if target contains '/' -%}
         {%- continue -%}
     {%- endif -%}
@@ -36,7 +40,7 @@ layout: base
     <tr>
         <td>&emsp; >
             <a class="post-link" href="{{ target }}" >
-                {{ res.title | remove_first: folder  }}
+                {{ target | remove_first: folder  }}
             </a>
         </td>
         <td>{{ res.modified_time }}</td>
@@ -45,21 +49,14 @@ layout: base
 
 <!-- then we list the pages under sub path */ -->
 
-{%- for res in site.pages -%}
+{%- for res in site.static_files -%}
 
-<!-- ignore /assets/ -->
-
-    {%- assign checkStart = res.url | split: '/assets/' -%}
-    {%- if checkStart[0] == '' -%}
-        {%- continue -%}
-    {%- endif -%}
-
-    {%- assign checkStart = res.url | split: page.url -%}
+    {%- assign checkStart = res.path | split: page.url -%}
     {%- if checkStart[0] != '' -%}
         {%- continue -%}
     {%- endif -%}
 
-    {%- assign target = res.url | remove_first: page.url -%}
+    {%- assign target = res.path | remove_first: page.url -%}
     {%- if target contains '/' -%}
         {%- assign folder_new = target | split: '/' | first -%}
     {%- else -%}

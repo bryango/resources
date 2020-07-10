@@ -6,6 +6,10 @@ layout: base
 
 <br/>
 
+{%- include license.html -%}
+
+<br/>
+
 <h2 id="path">Index of {{ page.url }}</h2>
 
 <table style="width:100%">
@@ -19,6 +23,13 @@ layout: base
 
 {%- for res in site.pages -%}
 
+<!-- ignore /README* -->
+
+    {%- assign checkStart = res.url | split: '/README' -%}
+    {%- if checkStart[0] == '' -%}
+        {%- continue -%}
+    {%- endif -%}
+
     {%- assign checkStart = res.url | split: page.url -%}
     {%- if checkStart[0] != '' -%}
         {%- continue -%}
@@ -29,13 +40,15 @@ layout: base
         {%- continue -%}
     {%- endif -%}
 
+    {%- assign name = res.title | remove_first: folder -%}
+    {%- if name == '' -%}
+        {%- assign name = 'index.html' -%}
+    {%- endif -%}
+
     <tr>
         <td>&emsp; >
-            <a class="post-link" href="{{ target }}" >
-                {{ res.title | remove_first: folder  }}
-            </a>
+            <a class="post-link" href="{{ target }}">{{ name }}</a>
         </td>
-        <td>{{ res.modified_time }}</td>
     </tr>
 {%- endfor -%}
 
@@ -70,13 +83,15 @@ layout: base
         </tr>
     {%- endif -%}
 
+    {%- assign name = res.title | remove_first: folder | remove_first: '/' -%}
+    {%- if name == '' -%}
+        {%- assign name = 'index.html' -%}
+    {%- endif -%}
+
     <tr>
         <td>&emsp; >
-            <a class="post-link" href="{{ target }}" >
-                {{ target | remove_first: folder | remove_first: '/' }}
-            </a>
+            <a class="post-link" href="{{ target }}">{{ name }}</a>
         </td>
-        <td>{{ res.modified_time }}</td>
     </tr>
 {%- endfor -%}
 </table>
