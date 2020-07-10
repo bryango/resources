@@ -4,3 +4,15 @@ plugins:
 
 readme_index:
   with_frontmatter: true
+
+defaults:
+  -
+    scope:
+      path: "README.*"
+    values:
+      layout: "pages"
+  -
+    scope:
+      path: "archive/README.*"
+    values:
+      layout: "files"

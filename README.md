@@ -1,7 +1,3 @@
----
-layout: pages
----
-
 # Bryan's Dump
 
 This is a minimal Markdown & file server for Bryan, built on Github pages.
