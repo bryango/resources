@@ -1,0 +1,28 @@
+name: Merge & Publish
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+    - name: Clone, merge and push to gh-pages
+      run: |
+        git clone "https://bryango:${{ secrets.PUSH_SECRET }}@github.com/bryango/resources.git"
+        cd resources
+        git config --local user.email "workflow@github.com"
+        git config --local user.name "Workflow - master"
+        git checkout gh-pages
+        git merge --ff --commit master
+        git push origin gh-pages
+
+# vim: ts=2 sw=2
