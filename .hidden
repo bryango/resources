@@ -7,5 +7,7 @@ assets
 vendor
 Gemfile
 Gemfile.lock
+LICENSE
 LICENSE.md
+README-software.md
 Makefile
