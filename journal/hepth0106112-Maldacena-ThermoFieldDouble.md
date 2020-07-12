@@ -157,6 +157,53 @@ $$
   \end{align}
   $$
 
+  <img
+    src="img/EuclideanWormhole.png"
+    style="width: 60%"
+    class="center"
+  />
+
+  > More about the Euclidean geometry:
+  > Euclidean black holes are completely smooth solutions; they do not have an interior or a singularity! In 3D, we have (per Maldacena's convention):
+  >
+  > $$
+      \dd{s}^2
+      = \pqty{r^2 - 1} \dd{\tilde{\tau}}^2
+        + \frac{1}{r^2 - 1} \dd{r}^2
+        + r^2 \dd{\tilde{\phi}}^2
+    $$
+  >
+  > There is an apparent singularity at $r = 1$. However, with certain periodicities the singularity is resolved; the geometry 'caps off' at $r = 1$ (in _Harlow_'s words).
+  >
+  > With $\tilde{\phi}\in\mathbb{R}$, this describes the 'Rindler' patch of AdS, and the horizon is just that of an accelerated observer; $J = 0$ BTZ, on the other hand, comes from identifying:
+  >
+  > $$
+      \tilde{\phi} \cong \tilde{\phi} + 2k\pi
+    $$
+  >
+  > See e.g. the (BTZ + Henneaux) paper [gr-qc/9302012]. Here we fix the horizon at $r = 1$, therefore the BH mass is in fact encoded in $k$.
+  > With $\phi = \tilde{\phi}/k,\ \tau = \tilde{\tau}/k$, we get the usual $\phi \cong \phi + 2\pi$ coordinate.
+  >
+  > With $
+      \rho = \cosh^{-1} r
+    $ or $r = \cosh \rho$, at $\rho \simeq 0$ or $r \simeq 1$, we get:
+  >
+  > $$
+      \dd{s}^2
+      \simeq \rho^2 k^2 \dd{\tau}^2
+        + \dd{\rho}^2
+        + \dd{\phi}^2
+    $$
+  >
+  > Non-singular if $
+      \tau \cong \tau + \frac{2\pi}{k}
+    $, in other words $
+      \beta = \frac{2\pi}{k}
+    $.
+  >
+  > Why we want a non-singular Euclidean geometry? My guess: From the perspective of gravitational path integral: we _input_ the inv. temperature $\beta$, and the non-singular geometry with $k = \frac{2\pi}{\beta}$ is selected for being the dominant saddle (for the Euclidean action).
+  > <!-- Verify via explicitly? -->
+
   Hartle-Hawking state is then given by the path integral over _half_ of the Euclidean geometry, with both boundary _unfixed_. Why half? Recall our objective: To find the bulk state that corresponds to $\ket{\mrm{TFD}}$: a CFT state.
 
     - Matching topologies $[0,\tfrac{\beta}{2}] \times S^{d-1}$
