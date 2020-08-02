@@ -4,6 +4,10 @@ body {
   font-family: monospace;
 }
 
+p {
+  margin: .8em 0;
+}
+
 table {
   border-collapse: collapse;
   width: 80%;
@@ -26,6 +30,22 @@ code {
   font-size: 90%;
 }
 
+blockquote {
+  padding: 16px;
+  padding-left: 18px;
+  margin-left: 1em;
+  background-color: #f0f0f0;
+  border-left: 4px solid #d6d6d6;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -38,6 +58,7 @@ code {
 
 .mjx-chtml {
   font-size: 105% !important;
+  font-family: sans-serif;
 }
 
 html body h1,
