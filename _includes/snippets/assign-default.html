@@ -1,0 +1,9 @@
+{%- if include.overwrite == nil -%}
+  {%- if include.global == nil -%}
+    {%- assign __return = include.default -%}
+  {%- else -%}
+    {%- assign __return = include.global -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign __return = include.overwrite -%}
+{%- endif -%}

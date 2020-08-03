@@ -1,3 +1,9 @@
+{%- include snippets/assign-default.html
+        default=false
+        global=site.mathjax_autoNumber
+        overwrite=page.mathjax_autoNumber -%}
+{%- assign _mathjax_autoNumber = __return -%}
+
 <script type="text/x-mathjax-config">
     var _config = { tex2jax: {
         inlineMath: [['$','$']]

@@ -5,6 +5,8 @@ plugins:
 readme_index:
   with_frontmatter: true
 
+mathjax_autoNumber: true
+
 defaults:
   -
     scope:
