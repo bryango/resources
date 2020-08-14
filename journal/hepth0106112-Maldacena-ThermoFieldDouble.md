@@ -175,6 +175,8 @@ $$
   >
   > There is an apparent singularity at $r = 1$. However, with certain periodicities the singularity is resolved; the geometry 'caps off' at $r = 1$ (in _Harlow_'s words).
   >
+  > **Note**: Behind the "horizon", we have $r<1$, and the signature is no longer Euclidean but $(--+)$, which makes no sense for an Euclidean theory. Therefore the interior is simply discarded.
+  >
   > With $\tilde{\phi}\in\mathbb{R}$, this describes the 'Rindler' patch of AdS, and the horizon is just that of an accelerated observer; $J = 0$ BTZ, on the other hand, comes from identifying:
   >
   > $$
@@ -192,7 +194,7 @@ $$
       \dd{s}^2
       \simeq \rho^2 k^2 \dd{\tau}^2
         + \dd{\rho}^2
-        + \dd{\phi}^2
+        + k^2 \dd{\phi}^2
     $$
   >
   > Non-singular if $
@@ -201,8 +203,10 @@ $$
       \beta = \frac{2\pi}{k}
     $.
   >
-  > Why we want a non-singular Euclidean geometry? My guess: From the perspective of gravitational path integral: we _input_ the inv. temperature $\beta$, and the non-singular geometry with $k = \frac{2\pi}{\beta}$ is selected for being the dominant saddle (for the Euclidean action).
+  > Why we want a non-singular Euclidean geometry first? My guess: From the perspective of gravitational path integral: we _input_ the inverse temperature $\beta$, and the non-singular geometry with $k = \frac{2\pi}{\beta}$ is selected for being the dominant saddle (for the Euclidean action).
   > <!-- Verify via explicitly? -->
+  >
+  > > Some alternative explanations: https://physics.stackexchange.com/q/86353. This is a non-trivial issue; see also the note on [2004.14428].
 
   Hartle-Hawking state is then given by the path integral over _half_ of the Euclidean geometry, with both boundary _unfixed_. Why half? Recall our objective: To find the bulk state that corresponds to $\ket{\mrm{TFD}}$: a CFT state.
 
