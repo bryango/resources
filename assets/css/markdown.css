@@ -1,6 +1,7 @@
 body {
+  max-width: 840px;
   padding: 32px 5%;
-  margin: 0;
+  margin: 0 auto;
   font-family: monospace;
 }
 
@@ -52,8 +53,9 @@ blockquote > :last-child {
   margin-right: auto;
 }
 
-.center img {
+img.center {
   padding: 2%;
+  max-width: 480px;
 }
 
 .mjx-chtml {
