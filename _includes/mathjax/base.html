@@ -5,24 +5,22 @@
 {%- assign _mathjax_autoNumber = __return -%}
 
 <script type="text/x-mathjax-config">
-    var _config = { tex2jax: {
-        inlineMath: [['$','$']]
-    }};
-    var _extent = { pkg: [
+    var _config = {
+        tex2jax: { inlineMath: [['$','$']] },
+        TeX: { extensions: {} }
+    };
+
+    _config.TeX.extensions = [
         "autoload-all.js",
         "[Contrib]/physics/physics.js",
         "[Contrib]/siunitx/siunitx.js"
-    ] };
-    _config.TeX = { extensions: _extent.pkg };
+    ];
 
     {%- if _mathjax_autoNumber == true -%}
-    _config.TeX = {
-        extensions: _extent.pkg,
-        equationNumbers: { autoNumber: "all" }
-    };
+    _config.TeX.equationNumbers = { autoNumber: "all" };
     {%- endif -%}
 
     MathJax.Hub.Config(_config);
 </script>
 
-<script id="MathJax-script" async src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script id="MathJax-script" async src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>

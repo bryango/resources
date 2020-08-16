@@ -32,10 +32,11 @@ code {
 }
 
 blockquote {
-  padding: 16px;
+  padding: 8px 0px;
   padding-left: 18px;
-  margin-left: 1em;
-  background-color: #f0f0f0;
+  margin-left: 0px;
+  margin-right: 0px;
+  /* background-color: #f0f0f0; */
   border-left: 4px solid #d6d6d6;
 }
 
@@ -61,6 +62,10 @@ img.center {
 .mjx-chtml {
   font-size: 105% !important;
   font-family: sans-serif;
+}
+
+.mjx-chtml.MJXc-display {
+  /* overflow: auto hidden; */
 }
 
 html body h1,
