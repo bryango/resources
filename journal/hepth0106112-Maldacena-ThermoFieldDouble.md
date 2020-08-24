@@ -203,10 +203,6 @@ $$
       \beta = \frac{2\pi}{k}
     $.
   >
-  > Why we want a non-singular Euclidean geometry first? My guess: From the perspective of gravitational path integral: we _input_ the inverse temperature $\beta$, and the non-singular geometry with $k = \frac{2\pi}{\beta}$ is selected for being the dominant saddle (for the Euclidean action).
-  > <!-- Verify via explicitly? -->
-  >
-  > > Some alternative explanations: https://physics.stackexchange.com/q/86353. This is a non-trivial issue; see also the note on [2004.14428].
 
   Hartle-Hawking state is then given by the path integral over _half_ of the Euclidean geometry, with both boundary _unfixed_. Why half? Recall our objective: To find the bulk state that corresponds to $\ket{\mrm{TFD}}$: a CFT state.
 
