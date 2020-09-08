@@ -8,6 +8,9 @@ readme_index:
 
 mathjax_autoNumber: true
 
+kramdown:
+  auto_id_prefix: true
+
 defaults:
   -
     scope:
