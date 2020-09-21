@@ -313,7 +313,7 @@ $$
   m_p = (x_1 - p_1, \cdots, x_n - p_n)
 $$
 
-We shall then consider derivations:
+We shall then consider the following derivations which spans $\mathrm{T}_p C$:
 
 $$
   \pd\colon
@@ -321,12 +321,66 @@ $$
   \longto k,
 $$
 
-Which spans $\mathrm{T}_p C$. e.g.
+Before continuing, let us first consider $A_{m_p}$ without restricting to the curve, or equivalently, taking $f \mathbin{:=} 0$. e.g.
 $
-  T_p(\mathbb{R}^n) = \mathbb{R}\aqty{
+  T_{p=0}(\mathbb{R}^n) = \mathbb{R}\aqty{
     \pdv{}{T_1},\cdots,\pdv{}{T_n}
   }
   = \Bqty{
     v^i \pdv{}{T_i}
   } \cong \mbb{R}^n
 $.
+$\pd$-action on $A_{m_0}$ is induced from its action on $A$, and is completely fixed by the Leibnitz's rule. e.g. $\pd\,(1) = \pd\,(1\cdot 1) = 2\,\pd\,(1) = 0$, etc. We have:
+
+$$
+  T_0 \mathbb{A}^n
+  = \Bqty{ \pd\colon A_{m_0} \to k }
+  \cong \Bqty{ \pd\colon A \to k }
+  \cong k^n
+  \label{eq:tangent_derivation_vector}
+$$
+
+**Rmk.** We see that there is no need for localization (to a point $p$) to define the tangent space on a $\mathbb{R}$-mfd; why? We have partition of 1 (unity) for a $\mathbb{R}$-mfd, so that local functions can always be stitched together to make a global function. This is not true for $\mathbb{C}$-mfds.
+
+Back to the curve $C\colon f = 0$, we have:
+
+$$
+  A \longto A_{m_p}
+  \longto A_{m_p} / (f)
+  \cong \Big( A/(f) \Big)_{m_p}
+$$
+
+Note that localization commutes with the quotient. $\pd$ on $\Big( A/(f) \Big)_{m_p}$ is contrained by the quotient: $\pd f = 0$. By \eqref{eq:tangent_derivation_vector}, we have:
+
+$$
+  T_p C
+  \cong \Bqty{
+    v\in k^2
+    \,\bigg|\,
+    \pd_v f = v^i \pdv{f}{x^i} = 0
+  }
+$$
+
+Note that:
+
+- smooth pt $\leadsto$ $T_p C$: a tangent line (tangent);
+- singular pt $\leadsto$ $T_p C \cong k^2$: the whole plane, $\pdv{f}{x} = \pdv{f}{y} = 0$.
+
+e.g.
+
+![](img/punctured_line.png)
+
+![](img/singular_curve.png)
+
+e.g (affine) twisted cubic curve: $(t,t^2,t^3)$, or
+
+$$
+  I = \{f \,\big|\, f(t,t^2,t^3) = 0\}
+  = (y - x^2, z - x^3)
+  = (y - x^2, z - xy)
+$$
+
+### Zariski Top.
+
+- $Z(I_1) \cup Z(I_2) = Z(I_1 I_2)$, by the property of prime ideals; or think of products of equations;
+- $\bigcap_i Z(I_i) = Z\pqty{\sum_i I_i}$, think of a system of equations;
