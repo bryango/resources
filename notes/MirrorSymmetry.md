@@ -1,8 +1,7 @@
 # Mirror Symmetry
 
+<!-- @import "/assets/mathjax.html" -->
 <!-- cSpell:ignore Kähler -->
-
-$\newcommand{\To}{\Rightarrow}$
 
 Prof. 周杰 近春园西楼245 jzhou2018@mail.tsinghua.edu.cn
 
@@ -68,3 +67,138 @@ $$
   h^{1,1}(X) = h^{n-1,1}(X^\vee),\quad
   h^{n-1,1}(X) = h^{1,1}(X^\vee)
 $$
+
+_Mirror_ Sym: mirror reflection in the Hodge diamond.
+
+**A-model:** $(X,\omega)$ $\to$ extract $\to (H^{\mathrm{even}},\cdot_Q)$, we have a _quantum product_ labeled by $Q$, with structure consts $C_{ijk}^X(Q)$. $Q$ is interpreted as a deformation parameter for the symplectic structure of $X$; $\omega\xrightarrow{Q} \tilde{\omega}$. Computation of $C_{ijk}^X(Q)$ is very difficult, and it's related to Gromov--Witten invariants.
+
+**B-model:** $Q$ is interpreted as a deformation parameter for the complex structure.
+
+## Basics
+
+**Symplectic structure:**
+
+$$
+  \omega
+  \in \mathcal{A}^2_X(X)
+  = \Gamma\pqty{
+      X,\mathcal{A}^2_X(X)
+    }
+  = \Gamma\pqty{
+      X,
+      \bigwedge\nolimits^{\!\!2}
+      \mathrm{T}^*\! X
+    }
+$$
+
+Symplectic structs $\mathcal{M}_{\mathrm{sp}}$ on $X$: all possible $\omega$'s modulo $\mop{Diff}(X)$. To find $\dim \mcal{M}_{\mathrm{sp}}$, consider tangent space: $\omega_0\to\omega_t$, $t$: deformation parameter,
+
+$$
+  \mop{T}_{[\omega_0]}
+    \mathcal{M}_{\mathrm{sp}}
+  = \frac{
+      \ker \mathrm{d}
+      \cap
+      \mathcal{A}^2_X(X)
+    }{
+      \mop{im} \mathrm{d}
+      \cap
+      \mathcal{A}^2_X(X)
+    }
+  = \mathrm{H}^2(X)
+$$
+
+**Complex struct:** $V\colon\ \mathbb{R}$-vec. sp., $\mathbb{C}$-struct: $I^2 = -\idty$. Complexify:
+
+$$
+  V_{\mathbb{C}}
+  = V\otimes_{\mathbb{R}} \mathbb{C}
+  = V^{1,0}\oplus V^{0,1}
+$$
+
+$(\pm i)$ eigenspace of $\tilde{I} = I\otimes 1$.
+
+Flat space $\leadsto$ manifold: $I\leadsto I_x$, integrable condition (Newlander–Nirenberg theorem): $\dd{}$ is well defined when we restricts to holomorphic functions; almost complex $\leadsto$ complex manifold. (Frobenius) Integrability:
+
+$$
+  [T^{0,1}, T^{0,1}] \subset T^{0,1}
+$$
+
+Deformation of complex struct with parameter $t$, we have:
+
+$$
+  \gamma^*_t T_t^{0,1}
+  \simeq
+    \big(
+      \idty + \mu(t)
+    \big)\, T_0^{0,1},\quad
+  \mu(t) \in \mathcal{A}^{0,1} (T^{1,0})
+$$
+
+**Maurer--Cartan eqn:** $\pdbar\mu + \frac{1}{2} [\mu,\mu] = 0$. We've seen this in YM theory; in fact,
+
+**Rmk.** Any deformation problem $\leftrightarrow$ differential graded Lie algebra w/ "integrable condition" given by Maurer--Cartan eqn w/ "equivalence condition" given by gauge group action.
+
+Again, check the tangent space, and we get:
+
+$$
+  \mop{T}_{[I_0]}
+    \mathcal{M}_{\mathrm{cpx}}
+  = \frac{
+      \ker \pdbar
+      \cap
+      \mathcal{A}^{0,1}(T_X^{1,0})
+    }{
+      \mop{im} \pdbar
+      \cap
+      \mathcal{A}^{0,1}(T_X^{1,0})
+    }
+  = \mathrm{H}^{0,1}_\pdbar \pqty{
+      T_X^{1,0}
+    }
+  =\colon \mathrm{H}^1_\pdbar \pqty{
+      T_X
+    }
+$$
+
+Note: elements in $\mathrm{H}^1_\pdbar(T_X)$ might or might _not_ be realized as a tangent vector $v$ along some curve $\mu(t)$. This is due to the non-linearity of Maurer--Cartan eqn. To see this, we can expand $\mu(t) = \sum_k t^k \mu_k,\ \mu_1 = v$, and the Maurer--Cartan eqn. can be solved order by order; we find that $v$ is integrable only if the obstruction class:
+
+$$
+  \mop{ob}(v)
+  \mathbin{:=}
+  [v,v] = 0 \in \mathrm{H}^2(T_X)
+$$
+
+**Cor.** If $H^2(T_X) = 0$, then $v$ always integrable. However, even if $H^2(T_X) \ne 0$, as long as $\mop{ob}_k(v) = 0$, then $v$ is integrable.
+
+**Thm. [Bogomolov-Tian-Todorov]** For $X$: CY, then we always have a _formal_ $\mu(t) = \sum_k t^k \mu_k$ such that $\mu_1 = v$.
+
+**Q.** Is $\mu(t)$ analytic / algebraic then? In algebraic cat., we can also define cohomology, but we no long have $\pdbar$; we have to formally define some $\delta$ to serve as a differential.
+
+Lift of some $\xi \in T_0 S$ to $\mathrm{H}^0$ is captured by the _Kodaira--Spencer map_ $\rho$, with $v = \rho(\xi) = \delta(\tilde{\xi}) \in \mathrm{H}^1$. This is explicitly realized as Čech cohomology.
+
+**Kähler manifold:** fundamental form:
+
+$$
+  \omega(a,b)
+  = - \aqty{a, Ib}
+  = \aqty{Ia, b}
+$$
+
+Symplectic struct + Complex struc + Riemannian metric. Kähler: $g = \aqty{,}$ is "real": $
+    g(Ia,Ib) = g(a,b)
+  $ and furthermore $I$ is parallel w.r.t. the Levi-Civita connection $\nabla$.
+
+$$
+  \mop{T}_{[\omega_0]}
+    \mathcal{M}_{\mathrm{Kähler}}
+  = \Bqty{
+      v \in \mathcal{A}^{1,1}_X (X)
+      \,\Big|\,
+      \dd{v} = 0
+    } \Big/ \mathnormal{\sim}
+  = \mathrm{H}^{1,1}(X)
+    \cap \mathrm{H}^2(X,\mathbb{R})
+$$
+
+What about global struct (bdy & group action fixed pts)? Use periods / _Hodge struct_.
