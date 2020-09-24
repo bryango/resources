@@ -72,7 +72,7 @@ $\Longleftrightarrow$ $b\cdot W \subset W$, for some fintely generated (f.g.) no
 
 **Comment:** This is non-trivial! Consider finding the minimal poly. of $\sqrt{2} + \sqrt[3]{5} + i$ over $\mathbb{Q}$. **Prop.** in fact gives an upper limit of the poly. deg.
 
-**Thm. (A form of Hilbert's Nullstellensatz --- zero-locus-theorem)**
+**Thm. (Hilbert's Nullstellensatz --- zero-locus-theorem, algebraic version)**
 
 If:
 - $L/k$ field ext., also!
@@ -199,13 +199,13 @@ $$
 In fact, _any_ max ideal $m\subset A$ takes the form:
 
 $$
-  m = \bqty{
+  m = \pqty{
     T_1 - a_1,\cdots,T_n-a_n
   }
   = \ker(\mop{ev}_a) = m_a
 $$
 
-Why? Think of Taylor expansion around the root $a$. The proof of this follows from Nullstellensatz: $A/m$ is a field, and a f.g. $k$-alg., therefore it is a finite extension of $k$; but $k = \bar{k}$ so $A/m = k$.
+Why? Think of Taylor expansion around the root $a$. The proof of this follows from _Nullstellensatz_: $A/m$ is a field, and a f.g. $k$-alg., therefore it is a finite extension of $k$; but $k = \bar{k}$ so $A/m = k$.
 
 **Affine (sub)varieties:** solution set of a system of poly. equations.
 
@@ -235,7 +235,7 @@ $$
   }
 $$
 
-We can then define the _affine coord. ring_ with $f \equiv g\ \mop{mod}\ I(X)$:
+We can then define the _affine coord. ring_ with $f \equiv g\ \mop{mod}\, I(X)$:
 
 $$
   k[X] \mathbin{:=} A/I(X)
@@ -382,5 +382,110 @@ $$
 
 ### Zariski Top.
 
-- $Z(I_1) \cup Z(I_2) = Z(I_1 I_2)$, by the property of prime ideals; or think of products of equations;
+**Def.** closed sets are $Z(I),\ I \subset A$ ideals; $Z(0) = \mathbb{A}^n,\ Z(1) = \varnothing$.
+
+- $Z(I_1) \cup Z(I_2) = Z(I_1 I_2)$, by the property of _prime_ ideals (if $f_1f_2 \in I$, then $f_1\in I$ or $f_2\in I$; max ideals are always prime for comm. rings); or think of products of equations;
+
 - $\bigcap_i Z(I_i) = Z\pqty{\sum_i I_i}$, think of a system of equations;
+
+**e.g.** closed subsets in $\mathbb{A}^1$ are finite pts and $\mathbb{A}^1$ itself (余有限拓扑). Note that open sets are very large in such topology, hence this is a very _coarse_ topology.
+
+There is a natural top. basis: $U_f = \mathbb{A}^n - Z(f),\ \forall\ f\in A$. By definition, any open set can be written as:
+
+$$
+  \mathbb{A}^n - Z(I)
+  = \mathbb{A}^n
+    - \bigcap_{f\in I} Z(f)
+  = \bigcup_{f\in I} \big(
+      \mathbb{A}^n
+      - Z(f)
+    \big)
+  = \bigcup_{f\in I} U_f
+$$
+
+Note that $f\in A$ irreducible poly. $\To$ $(f) \subset A$ prime ideal; this motivates us to define that:
+
+**Def. irreducible set (algebraic):** $X$ irreducible if $I(X) \subset A$ prime ideal. This is related to the geometric (topological) notion of irreducibility:
+
+**Prop. irreducible set (geometric):** $X$ irreducible _iff_ $X \ne Z(I_1) \cup Z(I_2)$, i.e. $X$ can not be decomposed into two proper closed sets.
+
+In the spirit of localization, we can def. (local) regular functions:
+
+$$
+  \mcal{O}(X) = \Bqty{
+    f \,\bigg|\,
+    \forall\ p\in X,
+    \ \exists\ U_p \subset X,
+    \ \text{s.t.}
+    \ f\big|_{U_p} = \frac{g}{h},
+    \ h\big|_{U_p} \ne 0
+  }
+$$
+
+e.g.
+
+- $\frac{1}{T}$ regular on $\mathbb{A}^1 - \{0\}$
+- $\frac{1}{T^2 + 1}$ regular on $\mathbb{A}^1_{\mathbb{R}}$
+
+**Rmk.** a resolution without localization is to look at _function fields_ on $X$, e.g. meromorphic functions on a $\mathbb{C}$-mfd.
+
+Consider:
+
+$$
+  k[X] \mathbin{:=} A/I(X)
+  \hookrightarrow \mathcal{O}(X)
+$$
+
+**Q.** Surjection?
+
+LHS: some poly.'s, nonzero on $X$; RHS: locally-defined fractions. This is clearly not true, for $X$: arbitrary set, e.g. $X = \mathbb{A}^1 - \{0\}$. However, what if:
+
+- $X = Z(I)$: a alg. var., or equivalently,
+- $X$ closed in $\mathbb{A}_k$
+
+This is still not true if $k \ne \bar{k}$, e.g. for $k = \mathbb{R}$ we have $\frac{1}{T^2 + 1} \in \mathcal{O}(x)$.
+
+Surprisingly, if $k = \bar{k}$, we do have $A/I(X) \cong \mathcal{O}(X)$, i.e. local fractions are all restrictions of global poly's. In fact, we have:
+
+- pt-wise: $\mathbb{A} \cong \mop{Specm} A$, or
+
+  $$
+    \Big\{
+      a\in \mathbb{A}
+    \Big\}
+    \longleftrightarrow
+    \Big\{
+      \text{max. ideals}
+      \ m_a \subset A
+    \Big\}
+  $$
+
+
+- Affine varieties:
+
+  $$
+    \Big\{
+      X = Z(I) \subset \mathbb{A}^n_k
+    \Big\}
+    \longleftrightarrow
+    \Big\{
+      \text{rad. ideals}
+      \ I \subset A
+    \Big\}
+  $$
+
+It is easy to check that:
+
+$$
+  X = Z(I)\mapsto I(X)\mapsto Z(I(X))
+$$
+
+is an identity map, since $I(X) \supset I$, $X\subset Z(I(X)) \subset Z(I) = X$. What about the other way around? i.e.
+
+$$
+  I = \sqrt{I}
+  \mapsto Z(I) =\colon X
+  \mapsto I(X) = I(Z(I))
+$$
+
+This is non-trivial, and due to the Nullstellensatz.
