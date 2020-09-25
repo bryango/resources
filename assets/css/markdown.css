@@ -1,6 +1,6 @@
 body {
-  max-width: 840px;
-  padding: 32px 5%;
+  max-width: 1000px;
+  padding: 28px 5%;
   margin: 0 auto;
   font-family: monospace;
   /* font-family: sans-serif; */
@@ -81,4 +81,63 @@ html body h6 {
 
 .license img {
   width: 160px;
+}
+
+ul.toc > li {
+  padding: 16px;
+  background-color: rgba(235, 235, 235, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(1px);
+}
+
+.toc li {
+  padding-top: 8px;
+}
+
+.toc ul {
+  padding-bottom: 4px;
+}
+
+/* See: Responsive Sidebar in w3school */
+/* And: <https://stackoverflow.com/a/3303944> */
+
+.toc-container {
+  width: 250px;
+  float: right;
+  position: relative;
+  overflow: hidden;
+}
+
+.toc {
+  width: 240px;
+  padding-right: 10px;
+  padding-left: 0px;
+  float: right;
+  position: fixed;
+  overflow: auto;
+  z-index: 200;
+}
+
+div.content {
+  margin-right: 300px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 840px) {
+
+  .toc-container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 25px;
+  }
+
+  .toc {
+    width: 100%;
+    position: relative;
+    padding: 0px;
+  }
+
+  div.content {
+    margin-right: unset;
+  }
 }

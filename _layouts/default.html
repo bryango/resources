@@ -2,8 +2,16 @@
 layout: base
 ---
 
-{{ content }}
+<!-- See: Responsive Sidebar in w3school -->
 
-<br/>
+<div class="toc-container">
+{% include toc.html html=content class="toc" %}
+</div>
 
-{%- include license.html -%}
+<div class="content">
+    {{ content }}
+
+    <br/>
+
+    {%- include license.html -%}
+</div>
