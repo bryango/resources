@@ -7,6 +7,10 @@
         rel="stylesheet"
         href="{{ '/assets/css/markdown.css' | relative_url }}"
     />
+
+    <!-- Legacy: load TeX macros -->
+    <!-- Now: use fetch, see below -->
+    <!--
     <script
         type="text/javascript"
         src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"
@@ -21,8 +25,12 @@
             );
         });
     </script>
-    {%- include mathjax/base.html -%}
-    {% seo %}
+    -->
+
+<!-- MathJax -->
+{% include mathjax/base.html %}
+
+{% seo %}
 </head>
 
 <body>
@@ -30,6 +38,27 @@
     <script type="math/tex" id="macros_tex"></script>
     <script type="math/tex" id="mathjax_tex"></script>
 </div>
+<script>
+    function addTeXmacros(tag, url) {
+        fetch(url)
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(body) {
+                document.querySelector(tag).innerHTML = body;
+            })
+    }
+    
+    addTeXmacros(
+        "#macros_tex",
+        "https://bryango.github.io/Templates/LaTeX/basics/macros.tex"
+    );
+
+    addTeXmacros(
+        "#mathjax_tex",
+        "https://bryango.github.io/Templates/LaTeX/basics/mathjax.tex"
+    );
+</script>
 
 {{ content }}
 
