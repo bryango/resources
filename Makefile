@@ -1,8 +1,10 @@
-all:
+all: update
 	bundle exec jekyll serve
 
 update:
 	cp -i ~/Templates/Science/LaTeX/mathjax.html assets/.
+
+update-res:
 	wget https://raw.githubusercontent.com/allejo/jekyll-toc/master/_includes/toc.html -O _includes/toc.html
 
 init:
