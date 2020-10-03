@@ -1,11 +1,16 @@
 # Renormalization
 
-<!-- cSpell:ignoreRegExp counterterm[s]?|renormalized -->
+<!-- cSpell:ignoreRegExp counterterm[s]?|renormaliz((ed)|(ability)|(able)){1} -->
 <!-- @import "/assets/mathjax.html" -->
 
 The continuum limit $\Lambda\to\infty$ is **not** well defined. Renormalization provides a way to _define_ the theory when $\Lambda\to\infty$.
 
 **My belief:** The only way to fully understand renormalization is through Wilson's arguments; all other "interpretations" of renormalization are only _heuristic_.
+
+**Concepts:**
+- Renormalization group
+- Counterterms
+- Regularization and cutoff
 
 ## References
 
@@ -127,7 +132,7 @@ However, in naïve perturbation theory, we wish to complete the entire path inte
 
 When $\Lambda \ll \Lambda_0$, we have no reason to believe the renormalized couplings $g(\Lambda)$ are close to the original couplings $g_0$ at $\Lambda_0$. In fact, they may differ by a large (but finite) renormalization factor $Z$: $g_0 = Zg$.
 
-### Counterterms
+### Counterterms & Renormalizability
 
 In the above analysis, the theory flows from UV to IR. However, in reality, the IR results are known from experiments, and we are trying to _extrapolates_ from IR to UV.
 
@@ -149,9 +154,17 @@ Basically, we have the following procedure:
 2. Tune (redefine) $g_0$ so that $(g,\Lambda)$ matches with experiments
 3. Use the tuned data to predicts phenomena at a different scale $(g',\Lambda')$
 
-**Uniqueness of the tuning? Schemes?**
+Note that the tuning of UV parameters $g_0$ is _far from unique!_ This is easy to understand: many UV theories might flow to the same IR theory. For this reason, some would say that RG is a _semi-group_.
 
-## Perturbation
+![RG Process](img/RG-process.png)
+
+Fortunately, most parameters $g^{(i)}$ are, in fact, _irrelevant_ --- such terms in the Lagrangian get suppressed by $\Lambda/\Lambda_0$ in IR. If the IR theory has only _relevant_ couplings, then one should be able to recover their physical values by tuning a finite amount of relevant couplings in the UV, and usually the tuning is unique. This is the defining characteristic of a **renormalizable** theory. Basically, this means that we can naturally obtain a UV theory by extrapolation.
+
+> However, the tuning process described above might encounter some serious obstruction: the tuned $g_0$ could blow up at some finite $\Lambda_{\mathrm{UV}}$; this is the so-called _Landau pole_. This tells us that the theory only works under some $\Lambda_{\mathrm{UV}}$, i.e. it is not _UV complete_; it's only an _effective_ theory. One have to "embed" this Lagrangian into a bigger theory that works beyond $\Lambda_0$; this is the non-trivial _UV completion_ of an effective theory.
+
+On the other hand, a theory is **non-renormalizable** if it contains irrelevant couplings in the IR. In this case the IR parameters $g$ depend sensitively on small perturbations of the UV parameters $g_0$, and one has to tune infinitely many bare parameters to obtain the physical IR values. Such theory is hardly _fundamental_, since it depends on infinitely many parameters; but it's a good _effective theory_ nonetheless.
+
+### Perturbation
 
 The above results are non-perturbative and should always hold. Perturbation theory is only a way to calculate the RG flow from UV to IR; it is reliable only if the IR coupling $g$ is sufficiently small. In this case we can tune $(g_0,\Lambda_0)$ with the following recursive / iterative algorithm:
 
@@ -159,7 +172,22 @@ The above results are non-perturbative and should always hold. Perturbation theo
 2. Tune (redefine) $(g_0,\Lambda_0)$ by adding counterterms, so that $(g,\Lambda)$ matches with experiments
 3. Increase order $n$ and go to step 1
 
+The (non-)renormalizability of a theory is evident in the perturbative expansion, by counting the **superficial degrees of divergence** $D$ of the Feynman diagrams. Basically,
 
+- Interaction vertices create loops, and loops create divergences. Higher order interaction vertices create more loops, which lead to more divergences.
+
+- External lines suppress divergences.
+
+For a renormalizable theory, there will be no divergence for diagrams with a sufficient number $E$ of external legs; for a non-renormalizable theory, however, there will always be divergences, no matter how large $E$ is.
+
+### Renormalization Schemes
+
+There is a subtlety in the above procedure: how do we actually relate IR parameters $(g,\Lambda)$ with actual physical quantities (e.g. amplitudes)?
+
+In fact, we've assumed that $(g,\Lambda)_{\Lambda\to 0}$ gives the physical couplings that we are familiar with, e.g. mass, electric charge and so on. This is not quite true, since physical quantities are actually defined with scattering amplitudes. There are different choices of relating $g$ with physical observables; this lead to various renormalization schemes
+
+- On-shell / pole-mass scheme
+- Minimal subtraction ($\mathrm{MS}$) & modified MS ($\overline{\mathrm{MS}}$)
 
 ---
 
@@ -170,7 +198,7 @@ $$
   Z(g_0,\Lambda_0) = e^{iW}
 $$
 
-Note that $W$ no longer has any $\phi$ dependence, but it is a function of $(g_0,\Lambda_0)$, which in turn is tuned by physical $(g,\Lambda)$. $W$ in fact contains all information about the seed theory, labeled by $(g,\Lambda)$. To extract this information, we usually perturb the original action $S_\Lambda[\phi]$ with a source term; then we have:
+Note that $W$ no longer has any $\phi$ dependence, but it is a function of $(g_0,\Lambda_0)$, which in turn is tuned by physical $(g,\Lambda)$. $W$ in fact contains all information about the seed theory, labeled by $(g_0,\Lambda_0)$. To extract this information, we usually perturb the original action $S[\phi]$ with a source term; then we have:
 
 $$
   S[\phi,J]
@@ -178,7 +206,7 @@ $$
   W \to W[J]
 $$
 
-Expand $W[J]$ in terms of $J$-modes, and its coefficient gives us dimensionless, physical coupling constants in the IR.
+Expand $W[J]$ in terms of $J$-modes, and its coefficient gives us physical coupling constants in the IR.
 
 
 
