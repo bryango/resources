@@ -149,14 +149,18 @@ $\var{g}$ is the so-called _counterterm_; intuitively, it's the (large) correcti
 
 Basically, we have the following procedure:
 
+<img
+  src="img/RG-process.png"
+  class="center"
+  style="width: 80%"
+/>
+
 0. Select some UV parameters $(g_0,\Lambda_0)$
 1. Perform the RG flow: $(g_0,\Lambda_0)\to (g,\Lambda)$
 2. Tune (redefine) $g_0$ so that $(g,\Lambda)$ matches with experiments
 3. Use the tuned data to predicts phenomena at a different scale $(g',\Lambda')$
 
 Note that the tuning of UV parameters $g_0$ is _far from unique!_ This is easy to understand: many UV theories might flow to the same IR theory. For this reason, some would say that RG is a _semi-group_.
-
-![RG Process](img/RG-process.png)
 
 Fortunately, most parameters $g^{(i)}$ are, in fact, _irrelevant_ --- such terms in the Lagrangian get suppressed by $\Lambda/\Lambda_0$ in IR. If the IR theory has only _relevant_ couplings, then one should be able to recover their physical values by tuning a finite amount of relevant couplings in the UV, and usually the tuning is unique. This is the defining characteristic of a **renormalizable** theory. Basically, this means that we can naturally obtain a UV theory by extrapolation.
 

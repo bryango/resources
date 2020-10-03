@@ -56,6 +56,10 @@ blockquote > :last-child {
   margin-right: auto;
 }
 
+img {
+  max-width: 100%;
+}
+
 img.center {
   padding: 2%;
   max-width: 480px;
