@@ -77,18 +77,6 @@ $$
 
 Renormalized parameters: $(g,\Lambda)$.
 
-$$
-  0
-  = \Lambda \dv{}{\Lambda}\,
-    \mcal{Z}\pqty{g(\Lambda),\Lambda}
-  = \pqty{
-      \Lambda \pdv{}{\Lambda}
-      + \Lambda \pdv{g^{(i)}}{\Lambda}
-        \pdv{}{g^{(i)}}
-    }
-    \mcal{Z}\pqty{g(\Lambda),\Lambda}
-$$
-
 > **Subtlety:** the notation above is only schematic; in practice we first Wick-rotate to Euclidean signature, so that the momentum cutoff is easily imposed: $\norm{p} = \sqrt{p_0^2 + \vb{p}^2} < \Lambda$. In Lorentzian signature, it's hard to define a covariant cutoff since $p_\mu p^\mu = - p_0^2 + \vb{p}^2$. This process can be made rigorous; just think of the 8-shaped contour in loop integrals.
 
 **Effective action:**
@@ -124,7 +112,21 @@ $$
       e^{i\,\Delta S[\phi_\Lambda + \chi]} \\
 $$
 
-If $\Lambda \lesssim \Lambda_0$, then $S_{\mathrm{eff}}$ is almost the same as the original $S$, with minor corrections from the $\int \DD\chi$ term.
+If $\Lambda \lesssim \Lambda_0$, then $S_{\mathrm{eff}}$ is almost the same as the original $S$, with minor corrections from the $\int \DD\chi$ term. Note that in our regularization scheme there will be no mixed terms of $\phi$ and $\chi$ in the effective action, since they have orthogonal Fourier modes.
+
+**RG Equation:**
+
+$$
+  0
+  = \Lambda \dv{}{\Lambda}\,
+    \mcal{Z}\pqty{g(\Lambda),\Lambda}
+  = \pqty{
+      \Lambda \pdv{}{\Lambda}
+      + \Lambda \pdv{g^{(i)}}{\Lambda}
+        \pdv{}{g^{(i)}}
+    }
+    \mcal{Z}\pqty{g(\Lambda),\Lambda}
+$$
 
 ## Perturbative Renormalization
 
@@ -132,7 +134,7 @@ However, in naïve perturbation theory, we wish to complete the entire path inte
 
 When $\Lambda \ll \Lambda_0$, we have no reason to believe the renormalized couplings $g(\Lambda)$ are close to the original couplings $g_0$ at $\Lambda_0$. In fact, they may differ by a large (but finite) renormalization factor $Z$: $g_0 = Zg$.
 
-### Counterterms & Renormalizability
+### Counterterms
 
 In the above analysis, the theory flows from UV to IR. However, in reality, the IR results are known from experiments, and we are trying to _extrapolates_ from IR to UV.
 
@@ -162,11 +164,7 @@ Basically, we have the following procedure:
 
 Note that the tuning of UV parameters $g_0$ is _far from unique!_ This is easy to understand: many UV theories might flow to the same IR theory. For this reason, some would say that RG is a _semi-group_.
 
-Fortunately, most parameters $g^{(i)}$ are, in fact, _irrelevant_ --- such terms in the Lagrangian get suppressed by $\Lambda/\Lambda_0$ in IR. If the IR theory has only _relevant_ couplings, then one should be able to recover their physical values by tuning a finite amount of relevant couplings in the UV, and usually the tuning is unique. This is the defining characteristic of a **renormalizable** theory. Basically, this means that we can naturally obtain a UV theory by extrapolation.
-
-> However, the tuning process described above might encounter some serious obstruction: the tuned $g_0$ could blow up at some finite $\Lambda_{\mathrm{UV}}$; this is the so-called _Landau pole_. This tells us that the theory only works under some $\Lambda_{\mathrm{UV}}$, i.e. it is not _UV complete_; it's only an _effective_ theory. One have to "embed" this Lagrangian into a bigger theory that works beyond $\Lambda_0$; this is the non-trivial _UV completion_ of an effective theory.
-
-On the other hand, a theory is **non-renormalizable** if it contains irrelevant couplings in the IR. In this case the IR parameters $g$ depend sensitively on small perturbations of the UV parameters $g_0$, and one has to tune infinitely many bare parameters to obtain the physical IR values. Such theory is hardly _fundamental_, since it depends on infinitely many parameters; but it's a good _effective theory_ nonetheless.
+However, for a _renormalizable_ theory, we can restrict the tuning to a _finite_ dimensional subspace formed by the _relevant_ couplings, since most other parameters $g^{(i)}$ are _irrelevant_ and get suppressed by $\Lambda/\Lambda_0$ in the IR. After such restriction to a relevant subspace, the RG flow is a group, and we can reverse the flow to _extrapolate_ towards UV.
 
 ### Perturbation
 
@@ -178,24 +176,33 @@ The above results are non-perturbative and should always hold. Perturbation theo
 
 The (non-)renormalizability of a theory is evident in the perturbative expansion, by counting the **superficial degrees of divergence** $D$ of the Feynman diagrams. Basically,
 
-- Interaction vertices create loops, and loops create divergences. Higher order interaction vertices create more loops, which lead to more divergences.
+- Interaction vertices create loops, and loops create UV divergences. Higher order interaction vertices create more loops, which lead to more divergences.
 
-- External lines suppress divergences.
+- External lines suppress UV divergences by factors like $\frac{1}{\cancel{p}}$ or $\frac{1}{p^2}$.
 
 For a renormalizable theory, there will be no divergence for diagrams with a sufficient number $E$ of external legs; for a non-renormalizable theory, however, there will always be divergences, no matter how large $E$ is.
 
 ### Renormalization Schemes
 
-There is a subtlety in the above procedure: how do we actually relate IR parameters $(g,\Lambda)$ with actual physical quantities (e.g. amplitudes)?
+There is a subtlety in the above procedure: how do we actually relate IR parameters $(g,\Lambda)$ with actual physical quantities, e.g. amplitudes $\mcal{M}(\mu)$?
 
 In fact, we've assumed that $(g,\Lambda)_{\Lambda\to 0}$ gives the physical couplings that we are familiar with, e.g. mass, electric charge and so on. This is not quite true, since physical quantities are actually defined with scattering amplitudes. There are different choices of relating $g$ with physical observables; this lead to various renormalization schemes
 
 - On-shell / pole-mass scheme
 - Minimal subtraction ($\mathrm{MS}$) & modified MS ($\overline{\mathrm{MS}}$)
 
+## Renormalizability
+
+Most parameters $g^{(i)}$ are, in fact, _irrelevant_ --- such terms in the Lagrangian get suppressed by $\Lambda/\Lambda_0$ in IR. If the IR theory has only _relevant_ couplings, then one should be able to recover their physical values by tuning a finite amount of relevant couplings in the UV, and usually the tuning is unique. This is the defining characteristic of a **renormalizable** theory. Basically, this means that we can naturally obtain a UV theory by extrapolation.
+
+> However, the tuning process described above might encounter some serious obstruction: the tuned $g_0$ could blow up at some finite $\Lambda_{\mathrm{UV}}$; this is the so-called _Landau pole_. This tells us that the theory only works under some $\Lambda_{\mathrm{UV}}$, i.e. it is not _UV complete_; it's only an _effective_ theory. One have to "embed" this Lagrangian into a bigger theory that works beyond $\Lambda_{\mathrm{UV}}$; this is the non-trivial _UV completion_ of an effective theory.
+
+On the other hand, a theory is **non-renormalizable** if it contains irrelevant couplings in the IR. In this case the IR parameters $g$ depend sensitively on small perturbations of the UV parameters $g_0$, and one has to tune infinitely many bare parameters to obtain the physical IR values. Such theory is hardly _fundamental_, since it depends on infinitely many parameters; but it's a good _effective theory_ nonetheless.
+
+
 ---
 
-Furthermore, after $\phi_\Lambda$ is completed integrated out, we have:
+Furthermore, after $\phi_\Lambda$ is completely integrated out, we have:
 
 $$
   S_{\mathrm{eff}}[\phi] \to W,\quad
