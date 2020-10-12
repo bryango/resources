@@ -44,7 +44,7 @@ A non-technical note on the geometry of gauge theory, including bundles and conn
 Finite Temperature Field Theory, Spring 2020, by Prof. Lian-Yi He @ Tsinghua
 
 **Contents**:
-1. TODO: Thermal propagator of free theory, from path integral;
+1. Thermal propagator of free theory, from path integral;
 2. Pure QED partition function in covariant gauge, with Faddeev-Popov quantization & mode expansions;
 3. QCD partition function from Feynman diagrams, with tricks to compute Matsubara sums;
 4. Ward identity with hard thermal loop (HTL), decomposition of transverse self-energy using projections, and HTL in QCD;
