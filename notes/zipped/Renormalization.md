@@ -1,5 +1,7 @@
 # Renormalization
 
+**This note is deprecated. Check Archive/Renormalization for the updated LaTeX version.**
+
 <!-- cSpell:ignoreRegExp counterterm[s]?|renormaliz((ed)|(ability)|(able)){1} -->
 <!-- @import "/assets/mathjax.html" -->
 
@@ -186,7 +188,7 @@ For a renormalizable theory, there will be no divergence for diagrams with a suf
 
 There is a subtlety in the above procedure: how do we actually relate IR parameters $(g,\Lambda)$ with actual physical quantities, e.g. amplitudes $\mcal{M}(\mu)$?
 
-In fact, we've assumed that $(g,\Lambda)_{\Lambda\to 0}$ gives the physical couplings that we are familiar with, e.g. mass, electric charge and so on. This is not quite true, since physical quantities are actually defined with scattering amplitudes. There are different choices of relating $g$ with physical observables; this lead to various renormalization schemes
+In fact, we've assumed that $(g,\Lambda)_{\Lambda\to 0}$ gives the physical couplings that we are familiar with, e.g. mass, electric charge and so on. This is not quite true, since physical quantities are actually defined with scattering amplitudes. There are different choices of relating $g$ with physical observables; this lead to various renormalization schemes:
 
 - On-shell / pole-mass scheme
 - Minimal subtraction ($\mathrm{MS}$) & modified MS ($\overline{\mathrm{MS}}$)
