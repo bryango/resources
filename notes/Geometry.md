@@ -42,6 +42,7 @@ Sub-fold $S\hookrightarrow M$:
 
 Regular:
 - rank = target
+- regular preimage = regular value
 - regular everywhere = submersion
 - regular pts preimage = properly embedded sub-fold
   - proper: preimage preserves compactness
@@ -86,12 +87,29 @@ $$
 \end{aligned}
 $$
 
+Riemann:
+- $\Gamma_{\mu\nu}^\lambda\sim A_\mu$ matrix: $\Gamma^\lambda{}_\nu = \Gamma_{\mu\nu}^\lambda \dd{x^\mu}$
+- $R = \dd{\Gamma} + \Gamma\wedge\Gamma$,
+
+  $$
+  \begin{aligned}
+    R^\lambda{}_{\sigma\mu\nu}
+    := \dd{x^\lambda}
+      R(\pd_\mu,\pd_\nu)\,\pd_\sigma
+    &= \pd_{\mu} \Gamma_{\nu\sigma}^\lambda
+      + \Gamma_{\mu\rho}^\lambda
+        \Gamma_{\nu\sigma}^\rho
+      - (\mu\leftrightarrow\nu)
+  \end{aligned}
+  $$
+
 ## Integral & orientation
 
-Induced volume by contraction:
+Induced volume form by contraction:
 $\mathrm{Vol}_S = i^* \pqty{\iota_n \mathrm{Vol}_M}$
 - $S$: immersed hypersurface
 - $n$: smooth unit normal
+- e.g. boundary volume form when $n$: boundary normal
 
 Orientation:
 - novanishing top form
@@ -109,4 +127,9 @@ Orientation:
   - involutive: $D$ sections closed under Lie brackets
   - integrable $\To$ involutive: Lie brackets of vectors tangent to sub-fold still tangent; this is due to Lie bracket invariant under pushforward.
 - Frobenius: involutive $\To$ integrable
+  - given $X,Y$ closed, find a complementary direction, e.g. $\pd_z$
+  - $V = \pd_i + v^z \pd_z$, when $\pd_z$ is projected out becomes trivially flat
+  - pointwise $(V,W) = (X,Y)\cdot A$, solve for $(V,W)$
+  - integral curve gives $(x,y,z) = \Phi(u,v,w)$, where $w$ labels the starting point $(0,0,w)$
+  - $(u,v,w) = \Phi^{-1}(x,y,z)$ new coordinates; integrated manifolds given by level sets $w = w_0$.
 
