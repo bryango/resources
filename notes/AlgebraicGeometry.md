@@ -242,8 +242,8 @@ $$
 $$
 
 
-It is illuminating to go back and forth: $I \to X = Z(I) \to I(X)$, and see if $I \overset{?}{=} I(x)$. In fact, we have:
-- $I(x) \supset I$; e.g. for $I = (T^2) \subset k[T]$, we have $X = Z(I) = \{a = 0\}$, $I(X) = (T) \supsetneq I$. However, in this case we do have this funny result:
+It is illuminating to go back and forth: $I \to X = Z(I) \to I(X)$, and see if $I \overset{?}{=} I(X)$. In fact, we have:
+- $I(X) \supset I$; e.g. for $I = (T^2) \subset k[T]$, we have $X = Z(I) = \{a = 0\}$, $I(X) = (T) \supsetneq I$. However, in this case we do have this funny result:
 
   $$
     \sqrt{I} = \sqrt{(T^2)} = (T) = I(X)
@@ -251,7 +251,7 @@ It is illuminating to go back and forth: $I \to X = Z(I) \to I(X)$, and see if $
 
   We are taking the "square root" of $I$; this can be formalized as the [**radical**](https://en.wikipedia.org/wiki/Radical_of_an_ideal) of $I$: $\mop{rad} I \equiv \sqrt{I}$.
 - $I(X) = \sqrt{I(X)}$: always radical --- $f^N(a) = 0\ \To\ f(a) = 0$, a field does not contain nilpotent element.
-- In fact, we always have $I(X) = \sqrt{I}$. This leads to the fact that
+- In fact, for $k = \bar{k}$, we always have $I(X) = \sqrt{I}$. This is the **Geometric Nullstellensatz**. This leads to the fact that:
 
   $$
     \Hom_{k-\mathrm{alg.}}(A/I,k)
@@ -427,7 +427,7 @@ e.g.
 - $\frac{1}{T}$ regular on $\mathbb{A}^1 - \{0\}$
 - $\frac{1}{T^2 + 1}$ regular on $\mathbb{A}^1_{\mathbb{R}}$
 
-**Rmk.** a resolution without localization is to look at _function fields_ on $X$, e.g. meromorphic functions on a $\mathbb{C}$-mfd.
+**Rmk.** a different perspective: a resolution without localization is to start with _function fields_ on $X$, e.g. meromorphic functions on a $\mathbb{C}$-mfd.
 
 Consider:
 
@@ -489,3 +489,39 @@ $$
 $$
 
 This is non-trivial, and due to the Nullstellensatz.
+
+### Geometric Nullstellensatz
+
+$$
+  I\pqty{Z(I)} = \sqrt{I}
+$$
+
+Obvious: $I\pqty{Z(I)} \supset \sqrt{I}$.
+
+**Special case:** $Z(I) = \varnothing\ \To\ I = A$. Otherwise, by alg. Nullstellensatz there is some max ideal $m$ s.t. $I \subset m \subset A$, and $Z(I) \supset Z(m) = \{a\} \ne \varnothing$.
+
+**General case:** reduced to special case! For $f\in I(Z(I))$, consider "embedding" into higher dimensional space:
+$A \hookrightarrow A' = k[T_1,\cdots,T_n,T_{n+1}]$, then we can construct:
+
+$$
+  J = I\cdot A' + \Big(
+      T_{n+1} f(T_1,\cdots,T_n) - 1
+    \Big)
+$$
+
+Clearly $Z(J) = \varnothing$, thus by the special case $J = A'$.
+
+This is _the trick of Rabinowitsch_. Intuitively, we embed $Z(I)\hookrightarrow Z(I)\times \mathbb{A}^1$, but then "removes" $Z(I)$ (and possibly more) by imposing a "parabolic" constraint: $T_{n+1} f(T_1,\cdots,T_n) = 1$. The resulting $Z(J)$ is clearly empty. This is localization in disguise!
+
+$$
+  A'/(T_{n+1}f - 1) = A[\tfrac{1}{f}]
+$$
+
+Now we have $A'/J = 0 = A[\tfrac{1}{f}] / (I\cdot A[\tfrac{1}{f}])$, i.e. $1 = \sum a_i b_i \in A[\tfrac{1}{f}]$. Equivalently,
+
+$$
+  f^N = \sum a_i b'_i \in I \subset A
+$$
+
+Thus $f\in \sqrt{I}$. $\ \blacksquare$
+
