@@ -63,6 +63,12 @@ layout: base
         {%- continue -%}
     {%- endif -%}
 
+<!-- ignore */zipped/ -->
+
+    {%- if res.url contains '/zipped/' -%}
+        {%- continue -%}
+    {%- endif -%}
+
     {%- assign checkStart = res.url | split: page.url -%}
     {%- if checkStart[0] != '' -%}
         {%- continue -%}

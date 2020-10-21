@@ -59,10 +59,10 @@ Group action:
 ## Derivatives
 
 Pullback:
-- $(G\circ F)^* = F^*\circ G^*$, contravariant functor
+- $(G\circ F)^* = F^* \circ G^*$, contravariant functor
 - nice (trivial for physicists):
   - $F^* \dd{\omega} = d(F^*\omega)$
-  - $F^*(\omega\wedge\eta) = (F^*\omega) \wedge (F^*\eta)$
+  - $F^* (\omega\wedge\eta) = (F^* \omega) \wedge (F^* \eta)$
 
 $i_V$: just like $\dd{}$-derivative:
 - $i_V^2 = 0$
@@ -88,7 +88,7 @@ $$
 $$
 
 Riemann:
-- $\Gamma_{\mu\nu}^\lambda\sim A_\mu$ matrix: $\Gamma^\lambda{}_\nu = \Gamma_{\mu\nu}^\lambda \dd{x^\mu}$
+- $\Gamma_{\mu\nu}^\lambda\sim A_\mu$ matrix: $\Gamma^\lambda{}_\nu = \Gamma _{\mu\nu}^\lambda \dd{x^\mu}$
 - $R = \dd{\Gamma} + \Gamma\wedge\Gamma$,
 
   $$

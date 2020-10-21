@@ -185,7 +185,7 @@ $$
   = \aqty{Ia, b}
 $$
 
-Symplectic struct + Complex struc + Riemannian metric. Kähler: $g = \aqty{,}$ is "real": $
+Symplectic struct + Complex struct + Riemannian metric. Kähler: $g = \aqty{,}$ is "real": $
     g(Ia,Ib) = g(a,b)
   $ and furthermore $I$ is parallel w.r.t. the Levi-Civita connection $\nabla$.
 
