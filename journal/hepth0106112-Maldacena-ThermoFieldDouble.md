@@ -43,9 +43,11 @@ $$
 
   $$
     \rho(t)
-    = e^{iHt} \rho(0)\, e^{-iHt}
+    = e^{-iHt} \rho(0)\, e^{iHt}
     = \rho(0)
   $$
+
+  _Note that time evolution of the density matrix in the Schrödinger picture is different from that of an usual operator in the Heisenberg picture._
 
   We expects that $\ket{\Psi(t)} = \ket{\Psi(0)}$, hence the left theory $L$ is evolved with negative time, or equivalently, with negative Hamiltonian:
 
